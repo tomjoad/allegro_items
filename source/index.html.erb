@@ -1,0 +1,21 @@
+<!-- Example row of columns -->
+<% data.items.each do |category, elements| %>
+  <div class="row">
+    <h2 id="<%= category %>"><span class="label label-info"><%= category %></span></h2>
+    <% elements.each do |element| %>
+      <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+          <a href="<%= ConfigMethods.item_url_string(category, element) %>">
+            <img data-src="holder.js/300x200" class="img-thumbnail">
+          </a>
+          <div class="caption">
+            <h3>Details</h3>
+            <p>compressed description</p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <hr>
+<% end %>
+
